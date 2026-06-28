@@ -5,7 +5,7 @@ A visually stunning, interactive web-based simulator that mimics the computation
 ---
 
 ## 🚀 Live Demo
-👉 **[Insert your live hosting link here after deployment]**
+👉 **[(https://brain-mimic.vercel.app/)]**
 
 ---
 
