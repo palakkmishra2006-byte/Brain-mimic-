@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain-Mimic Logic Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Brain-Mimic Logic Simulator</h1>
+        <p>Adjust weights and thresholds to mimic neural logic gates.</p>
+
+        <div class="controls">
+            <button onclick="setPreset('AND')">Load AND Gate</button>
+            <button onclick="setPreset('OR')">Load OR Gate</button>
+            <button onclick="resetNetwork()">Reset</button>
+        </div>
+
+        <div class="network-container" style="position: relative;">
+            <canvas id="synapseCanvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+
+            <div class="layer" id="input-layer" style="position: relative; z-index: 2;">
+                <h3>Inputs</h3>
+                <div class="neuron" id="inputA" onclick="toggleInput('A')">A: <span id="valA">0</span></div>
+                <div class="neuron" id="inputB" onclick="toggleInput('B')">B: <span id="valB">0</span></div>
+            </div>
+
+            <div class="synapses" style="position: relative; z-index: 2;">
+                <div class="control-group">
+                    <label>Weight A (w1): <span id="w1-val">0.5</span></label>
+                    <input type="range" id="w1" min="-2" max="2" step="0.1" value="0.5" oninput="updateNetwork()">
+                </div>
+                <div class="control-group">
+                    <label>Weight B (w2): <span id="w2-val">0.5</span></label>
+                    <input type="range" id="w2" min="-2" max="2" step="0.1" value="0.5" oninput="updateNetwork()">
+                </div>
+                <div class="control-group">
+                    <label>Threshold (θ): <span id="th-val">0.8</span></label>
+                    <input type="range" id="th" min="-2" max="2" step="0.1" value="0.8" oninput="updateNetwork()">
+                </div>
+            </div>
+
+            <div class="layer" id="output-layer" style="position: relative; z-index: 2;">
+                <h3>Output</h3>
+                <div class="neuron" id="outputY">Y: <span id="valY">0</span></div>
+            </div>
+        </div>
+
+        <div class="math-display">
+            <p>Formula: <span class="formula">Total Input = (A × w1) + (B × w2)</span></p>
+            <p>Current Calculation: <span id="calc-text">0</span></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
