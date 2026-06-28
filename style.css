@@ -1,0 +1,100 @@
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #161b22;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid #30363d;
+    width: 650px;
+}
+
+h1 { color: #58a6ff; margin-bottom: 5px; }
+
+.controls button {
+    background: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.controls button:hover { background: #30363d; border-color: #8b949e; }
+
+.network-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0;
+    gap: 20px;
+    min-height: 220px; /* Canvas bounds ke liye mandatory hai */
+}
+
+.layer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.neuron {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #21262d;
+    border: 3px solid #30363d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.neuron.active {
+    background: #238636;
+    border-color: #56ff75;
+    box-shadow: 0 0 20px #238636;
+    color: white;
+}
+
+.synapses {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #21262d;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+input[type="range"] { width: 150px; cursor: pointer; }
+
+.math-display {
+    background: #0d1117;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    font-family: monospace;
+}
+.formula { color: #ff7b72; }
